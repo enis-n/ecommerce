@@ -7,6 +7,10 @@ export default async function handle(req, res) {
     //making sure that we have a connection to the database
     await mongooseConnect()
 
+    if (method === 'GET') {
+        res.json(await Product.find())
+    }
+
     if (method === 'POST') {
         const { title, description, price } = req.body
         const productDoc = await Product.create({
