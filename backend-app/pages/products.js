@@ -39,6 +39,9 @@ export default function Products() {
                                     Edit
                                 </Link>
 
+                                <Link href={'/products/delete/' + product._id}>
+                                    Delete
+                                </Link>
                             </td>
                         </tr>
                     ))}
